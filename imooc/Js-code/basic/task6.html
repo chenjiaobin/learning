@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>改变HTML样式、显示隐藏</title>
+</head>
+<body>
+	<h2 id="con">I love javascript</h2>
+	<p id="con2">javascript javascript javascript javascript</p>
+	<form>
+	   <input type="button" onclick="hidetext()" value="隐藏内容" /> 
+	   <input type="button" onclick="showtext()" value="显示内容" /> 
+	</form>
+	<script tpye="text/javascript">
+		var myChar=document.getElementById('con');
+		myChar.style.color="red";
+		myChar.style.width="300px";
+		myChar.style.backgroundColor="#ccc";
+		function hidetext() {
+			var myChar2=document.getElementById('con2');
+			myChar2.style.display="none";
+
+		}
+		function showtext() {
+			var myChar2=document.getElementById("con2");
+			myChar2.style.display="block";
+		}
+	</script>
+
+
+</body>
+</html>

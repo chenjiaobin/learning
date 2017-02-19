@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>输出内容（document.write）、alert消息对话框、confirm消息对话框、prompt 消息对话框</title>
+
+	<script type="text/javascript">
+		document.write("I love javascript! ");//1. 直接输出
+		document.write("<hr />");
+
+		var mystr="hello world! ";
+		document.write(mystr);//2. 直接写变量名，输出变量存储的内容
+		document.write("<hr />");
+
+		document.write(mystr+"I love javascript ");//3.多项内容间用+号连接ei
+		document.write("<hr />");
+
+		document.write(mystr+"<br />");//4. 输出字符串后，输出一个换行符，标签用“”括起来
+		document.write("<hr />");
+
+		function rec(){
+			var mychar="i love javascript";
+			alert(mystr);
+			alert("hello");
+		}
+
+		function rec2() {
+			var myMessage=confirm("你喜欢js吗？");
+			if(myMessage==true){
+				document.write("很好，加油！");
+			}else{
+				document.write("js很强大，要学习！");
+			}
+		}
+
+		function rec3() {
+			var score;
+			score = prompt("你好",score);
+			if(score>=90){
+				document.write("你很棒！");
+			}else if(score>=75){
+				document.write("不错！");
+			}else if (score>=60) {
+				document.write("要加油！");
+			}else{
+				document.write("要努力！");
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" name="button" onclick="rec()" value="点击我，弹出对话框" />
+	<hr />
+
+	<input type="button" name="button" onclick="rec2()" value="点击我，弹出确认对话框" />
+	<hr />
+
+	<input type="button" name="button" onclick="rec3()"	value="点击我，对成绩做评价！" />
+	<hr />
+</body>
+</html>

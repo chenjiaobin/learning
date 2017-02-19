@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>编程练习</title>
+	<script type="text/javascript">
+		function openWindow() {
+			var openWebpage=confirm("确认新建窗口打开网站吗？");
+			if(openWebpage==true){
+				var myURL=prompt("确定打开的网址","http://www.gongwenjun.com");
+				if(myURL!=null){
+					window.open(myURL,"_blank","width=400px,height=500px,menubar=no,toolbar=no")
+				}
+				else{
+					alert("Bye!");
+				}
+			}
+			else{
+				alert("Bye!");
+			}
+		}
+	</script>
+</head>
+<body>
+	<input type="button" value="新窗口打开网站" onclick="openWindow()" />
+</body>
+</html>
