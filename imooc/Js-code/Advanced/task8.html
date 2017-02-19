@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Date 日期对象</title>
+	<script type="text/javascript">
+		//返回/设置年份
+		var mydate=new Date();//当前时间2014年3月6日
+		document.write(mydate+"<br>");//输出当前时间
+		document.write(mydate.getFullYear()+"<br>");//输出当前年份
+		mydate.setFullYear(81); //设置年份
+		document.write(mydate+"<br>"); //输出年份被设定为 0081年。
+
+		//返回星期
+		var weekday=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+		//定义数组对象,给每个数组项赋值
+		var mynum=mydate.getDay();//返回值存储在变量mynum中
+		document.write(mydate.getDay());//输出getDay()获取值
+		document.write("今天是："+ weekday[mynum]);//输出星期几
+
+		//返回/设置时间方法
+		document.write("当前时间："+mydate+"<br>");
+		mydate.setTime(mydate.getTime() + 60 * 60 * 1000);
+		document.write("推迟一小时时间：" + mydate);
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
