@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>流程控制语句</title>
+	<script type="text/javascript">
+
+		document.write("if语句"+"<hr />");
+		var mypen = "black"; 
+		if(mypen=="black"){
+			document.write("笔是黑色的，所以购买"+"<br /><br /><br />");
+		}
+
+		document.write("if...else语句"+"<hr />");
+		var ticket =true; 
+		if(ticket){
+			document.write("有票，可以看电影。"+"<br /><br /><br />");
+		}
+		else{
+			document.write("没票，电影看不成。"+"<br /><br /><br />");
+		}
+
+		document.write("if...else嵌套语句"+"<hr />");
+		var myage =99;//赵红的年龄为99
+		if(myage<=44)
+		  {document.write("青年"+"<br /><br /><br />");}
+		else if(myage<=59) 
+		  {document.write("中年人"+"<br /><br /><br />");}
+		else if  (myage<=89)
+		  {document.write("老年人"+"<br /><br /><br />");}
+		else        
+		  {document.write("长寿老年人"+"<br /><br /><br />");}
+
+		document.write("多种选择（Switch语句)"+"<hr />");
+		var myweek =3;//myweek表示星期几变量
+		switch(myweek){
+		 	case 1:
+		 	case 2:
+		 		document.write("学习理念知识"+"<br /><br /><br />");
+		 		break;
+		 	case 3:
+		 	case 4:
+				document.write("到企业实践"+"<br /><br /><br />");
+		 		break;
+		 	case 5:
+		 		document.write("总结经验"+"<br /><br /><br />");
+		 		break;
+		 	case 6:
+		 	case 7:
+		 		document.write("周六、日休息和娱乐"+"<br /><br /><br />");
+		 		break;
+		 	default:break;
+		}
+
+		document.write("for循环"+"<hr />");
+		var num=1;
+		for (num=1;num<=6;num++){   
+			document.write("取出第"+num+"个球<br />");
+		}
+		document.write("<br /><br /><br />");
+
+		document.write("while循环"+"<hr />");
+		var mynum =1;//mynum初值化数值为1
+		while (mynum<=5){
+			document.write("数字:"+mynum);
+		    mynum=mynum+1;	
+		}
+		document.write("<br /><br /><br />");
+
+		document.write("do...while循环"+"<hr />");
+		do{
+			document.write("数字:"+mynum+"<br />");
+			mynum=mynum-1;
+		}while(mynum)
+		document.write("<br /><br /><br />");
+
+		document.write("break"+"<hr />");
+		var myscore =new Array(70,80,66,90,50,100,89);
+		var i=0;
+		while(i<myscore.length)
+		{
+		  	if(myscore[i]<60){
+		    	document.write("成绩"+myscore[i]+"不及格，不用循环了"+"<br />");
+		    	break;
+		   	}
+		  	document.write("成绩:"+myscore[i]+"及格，继续循环"+"<br>");
+		  	i=i+1;		  
+		}
+		document.write("<br /><br /><br />");
+
+		document.write("continue"+"<hr />");
+		for(i=0;i<myscore.length;i++){
+		  	if(myscore[i]<60){
+				document.write("成绩不及格，不输出！"+"<br>");
+		   		continue;
+			}
+			document.write("成绩:"+myscore[i]+"及格，输出！"+"<br>");
+		}
+		document.write("<br /><br /><br />");
+	</script>
+
+
+
+
+
+</head>
+<body>
+	
+</body>
+</html>

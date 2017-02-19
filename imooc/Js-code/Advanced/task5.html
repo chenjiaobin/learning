@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>函数</title>
+	
+
+</head>
+<body>
+	<!-- 第二种调用方法，按钮，onclick点击事件，直接写函数名 -->
+	<input type="button" value="click it" onclick="add2()" />
+	<hr />
+
+
+
+
+	<script type="text/javascript">
+		function add2(){
+			sum=1+1;
+			alert(sum);
+		}
+		add2();//第一种调用方法，直接写函数名
+
+
+		function add3(x,y,z){
+			sum = x + y +z;
+			document.write(x+"、"+y+"、"+z+"和:"+sum+"<br/>");
+		}
+		add3(5,8,3);
+		add3(7,1,4);
+
+
+		document.write("<br />带返回值函数<hr />");
+		function app2(x,y){ 
+			var sum,x,y;
+		    sum = x * y;
+		    return sum;
+		}
+		var req1=app2(5,6);
+		var req2=app2(2,3);
+		var sumq=req1+req2;
+		
+		document.write("req1的值:"+req1+"<br/>");
+		document.write("req2的值:"+req2+"<br/>");
+		document.write(req1+"与"+req2+"和:"+sumq+"<br/><br/><br/>");
+
+		document.write("编程练习<hr />");
+		function bijiao(x,y){
+		    if(x>y){
+		    	return x;
+		    }else if(x<y){
+		        return y;
+		    }else{
+		        return "一样大";
+		    }
+		}
+
+		document.write(" 5 和 4 的较大值是:"+bijiao(5,4)+"<br>");
+		document.write(" 6 和 3 的较大值是:"+bijiao(6,3)); 
+	</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组的创建及三种赋值方法、数组length属性</title>
+	<script language="javascript">
+		document.write("第一种方法"+"<hr />");
+		var myarr=new Array(3);
+		myarr[0]=88;
+		myarr[1]=90;
+		myarr[2]=68;
+		document.write("数组第一个值是:"+myarr[0]+"<br>");
+		document.write("数组第二个值是:"+myarr[1]+"<br>");
+		document.write("数组第三个值是:"+myarr[2]+"<br><br>");
+
+		document.write("第二种方法"+"<hr />");
+		var myarr2 = new Array(66,80,90);
+		document.write("数组第一个值是:"+myarr2[0]+"<br>");
+		document.write("数组第二个值是:"+myarr2[1]+"<br>");
+		document.write("数组第三个值是:"+myarr2[2]+"<br><br>");
+
+		document.write("第三种方法"+"<hr />");
+		var myarr3=[8,9,6];
+		document.write("数组第一个值是:"+myarr3[0]+"<br>");
+		document.write("数组第二个值是:"+myarr3[1]+"<br>");
+		document.write("数组第三个值是:"+myarr3[2]+"<br><br>");
+
+		document.write("数组length属性"+"<hr />");
+		var arr=[98,76,54,56,76];
+		document.write(arr.length+"<br />");
+		arr[15]=34;
+		document.write(arr.length);
+
+
+
+		
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>二维数组</title>
+	<script type="text/javascript">
+		document.write("二维数组定义方法一"+"<hr />");
+		var myarr=new Array();//先声明一维
+		for(var i=0;i<2;i++){ //一维长度为2
+			myarr[i]=new Array();//再声明二维
+			for (var j=0; j<3 ; j++) {
+				myarr[i][j]=i+j;
+				document.write(myarr[i][j]+"&nbsp;&nbsp;");
+			}
+			document.write("<br />");
+		}
+
+		document.write("<br />"+"二维数组定义方法二"+"<hr />");
+		var myarray=[[0,2,3],[1,2,2]];
+		for(var i=0;i<2;i++){ //一维长度为2
+			for (var j=0; j<3 ; j++) {
+				document.write(myarray[i][j]+"&nbsp;&nbsp;");
+			}
+			document.write("<br />");
+		}
+
+		document.write("<br />"+"length的使用"+"<hr />");
+		var myarr=new Array(3);
+		for(var i=0; i<myarr.length; i++){
+		    myarr[i]=new Array(6);
+		    for(var j=0; j<myarr[i].length; j++){
+		        myarr[i][j]=i*j;
+		        document.write(myarr[i][j]+"&nbsp;&nbsp;");
+		        
+		    }
+		    document.write("<br />");
+		}
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
