@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>window对象（计时器）</title>
+	<script tpye="text/javascript">
+		function openwindow(){
+           	window.open('http://www.gongwenjun.com','_blank','width=600px,height=400px');
+    	}
+
+    	var attime;
+    	function clock(){
+    	  	var time=new Date();          
+    	  	attime= time.getHours()+":"+time.getMinutes()+":"+time.getSeconds(); 
+    	  	document.getElementById("clock").value = attime;
+    	}
+    	//setInterval(),每多少毫秒运行一次
+    	var stop=setInterval("clock()",100);
+
+
+    	//计时器setTimeout(),延迟运行
+    	var num=0;
+    	function startCount() {
+    	 	document.getElementById('count').value=num;
+    	  	num=num+1;
+    	  	setTimeout("startCount()",1000); 
+    	}
+    	setTimeout("startCount()",1000);
+
+    	var num1=0;
+    	var i1;
+    	function startCount1(){
+    	    document.getElementById('count1').value=num1;
+    	    num1=num1+1;
+    	    i1=setTimeout("startCount1()",1000);
+    	}
+    	function stopCount1(){
+    	    clearTimeout(i1);
+    	}
+	</script>
+</head>
+<body>
+	<form>
+		<input type="button" value="点击我，打开新窗口" onclick="openwindow()" />
+		<hr>
+		<input type="text" id="clock" size="50"  />
+		<!-- clearInterval(),清除计时器 -->
+		<input type="button" value="Stop" onclick="clearInterval(stop)" />
+		<hr>
+		<input type="text" id="count" />
+
+		<hr>
+		<input type="text" id="count1" />
+		<input type="button" value="Start" onclick="startCount1()" />
+		<input type="button" value="Stop"  onclick="stopCount1()" />
+
+	</form>
+</body>
+</html>

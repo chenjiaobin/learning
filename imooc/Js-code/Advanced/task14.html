@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>History对象</title>
+	<script type="text/javascript">
+		var HL =window.history.length;
+		document.write("当前窗口的浏览历史总长度: "+HL);
+
+		function GoBack() {
+            window.history.back();
+            //window.history.go(-1);
+        }
+        function GoForward() {
+            window.history.forward();
+            //window.history.go(1);
+        }	
+	</script>
+</head>
+<body>
+	点击下面的锚点链接，添加历史列表项:
+    
+    <br />
+    <a href="#target1">第一个锚点</a>
+    <a name="target1"></a>
+    <br />
+    <a href="#target2">第二个锚点</a>
+    <a name="target2"></a>
+    <br /><br />
+    使用下面按钮，实现返回前一个页面:
+    <form>
+    	<input type="button"  value="返回下一个页面" onclick="GoForward()" />        
+       	<input type="button"  value="返回前一个页面" onclick="GoBack();" />        
+    </form>
+    <hr>
+
+	<p>history对象记录了用户曾经浏览过的页面(URL)，并可以实现浏览器前进与后退相似导航的功能。</p>
+	<p>注意:从窗口被打开的那一刻开始记录，每个浏览器窗口、每个标签页乃至每个框架，都有自己的history对象与特定的window对象关联。</p>
+</body>
+</html>

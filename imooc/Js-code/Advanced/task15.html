@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>其他window对象</title>
+	<script type="text/javascript">
+		document.write("location对象：location用于获取或设置窗体的URL，并且可以用于解析URL。<hr />"+window.location.href+"<br /><br />");   
+		document.write("Navigator对象：Navigator 对象包含有关浏览器的信息，通常用于检测浏览器与操作系统的版本。<hr />"+window.navigator.appVersion);
+		function validB(){ 
+		    var u_agent = navigator.userAgent; 
+		    var B_name="不是想用的主流浏览器!"; 
+		    if(u_agent.indexOf("Firefox")>-1){ 
+		        B_name="Firefox"; 
+		    }else if(u_agent.indexOf("Chrome")>-1){ 
+		        B_name="Chrome"; 
+		    }else if(u_agent.indexOf("MSIE")>-1&&u_agent.indexOf("Trident")>-1){ 
+		        B_name="IE(8-10)";  
+		    }
+		    document.getElementById('bName').value="浏览器:"+B_name+"  u_agent:"+u_agent;
+		    
+		}
+
+		document.write("<br />screen对象用于获取用户的屏幕信息。<hr />");
+		document.write( "屏幕宽度："+screen.width+"px<br />" );
+		document.write( "屏幕高度："+screen.height+"px<br />" );
+
+		document.write("可用宽度："+window.screen.availWidth+"<br />");
+		document.write("可用高度："+window.screen.availHeight); 
+
+	</script>
+</head>
+<body>
+	<hr>
+	<input type="text" id="bName" />
+	<input type="button" value="查看浏览器" onclick="validB()" / >
+</body>
+</html>
