@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>使用事件处理程序</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="按钮1" id="btn" onclick="showMes()">
+
+		<input type="button" value="按钮2" id="btn2">
+		<input type="button" value="按钮3" id="btn3">
+		<input type="button" value="按钮4" id="btn4">
+		<input type="button" value="按钮5" id="btn5">
+	</div>
+
+
+	<script>
+		function showMes(){
+			alert('HTML事件处理程序！');
+		}
+
+		var btn2=document.getElementById('btn2');
+		btn2.onclick=function(){
+			alert("这是通过DOM0级添加的事件！");
+		}
+		//删除事件：
+		//btn2.onclick=null;
+
+		function showMessage(){
+			alert('这是通过DOM2级添加的事件！')
+		}
+		var btn3=document.getElementById('btn3');
+		btn3.addEventListener('click',showMessage,false);
+		btn3.addEventListener('click',function (){
+			alert(this.value);
+		},false);
+		// 删除事件
+		//btn3.removeEventListener('click',showMessage,false);
+
+		// function showMessageIE(){
+		// 	alert('IE事件处理程序！');
+		// }
+		// var btn4=document.getElementById('btn4');
+		// btn4.attachEvent('onclick',showMessageIE);
+		//删除事件
+		//btn4.detachEvent('onclick',showMessageIE);
+
+		var btn5=document.getElementById('btn5');
+		//跨浏览器
+		var eventUtil={
+			//添加句柄
+			addHandler:function(element,type,handler){
+               if(element.addEventListener){
+                 element.addEventListener(type,handler,false);
+               }else if(element.attachEvent){
+                 element.attachEvent('on'+type,handler);
+               }else{
+                 element['on'+type]=handler;
+               }
+         	},
+         	// 删除句柄
+         	removeHandler:function(element,type,handler){
+               if(element.removeEventListener){
+                 element.removeEventListener(type,handler,false);
+               }else if(element.detachEvent){
+                 element.detachEvent('on'+type,handler);
+               }else{
+                 element['on'+type]=null;
+               }
+         	}
+		}
+		eventUtil.addHandler(btn5,'click',function() {
+			alert("跨浏览器兼容");
+		});
+
+	</script>
+</body>
+</html>

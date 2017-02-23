@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>插入节点appendChild()、insertBefore()</title>
+</head>
+<body>
+	<ul id="test">
+	  	<li id="x1">JavaScript</li>
+	  	<li>HTML</li>
+	</ul> 
+	<button onclick="clearText()">清除节点内容</button>
+
+	<script type="text/javascript">
+
+	  	var otest = document.getElementById("test");  
+	  	var newLi = document.createElement("li");
+	  	newLi.innerHTML="PHP";
+	  	otest.appendChild(newLi);
+	 	
+	 	var node = document.getElementById("x1");
+	 	var newLi2 = document.createElement("li");
+	 	newLi2.innerHTML="php";
+	 	otest.insertBefore(newLi2,otest.childNodes[1]);
+	 	//otest.insertBefore(newLi2,node);
+	    
+	    function clearText() {
+	      	var content=document.getElementById("test");
+	        for(var i=content.childNodes.length-1;i>=0;i--){
+	        	content.removeChild(content.childNodes[i]);
+	    	}
+	     
+	    }      
+	</script>
+</body>
+</html>

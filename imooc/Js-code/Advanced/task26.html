@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>浏览器窗口可视区域大小、网页尺寸、</title>
+</head>
+<body>
+	<script type="text/javascript">
+
+		//前为 检测Internet Explorer 8及以下，后为检测IE9+、Chrome、Firefox、Opera 以及 Safari
+		var w= document.documentElement.clientWidth || document.body.clientWidth;
+		var h= document.documentElement.clientHeight || document.body.clientHeight;
+		document.write(w+" "+h+"<br />");
+
+		var sw=document.documentElement.scrollWidth || document.body.scrollWidth;
+		var sh=document.documentElement.scrollHeight || document.body.scrollHeight;
+		document.write(sw+" "+sh+"<br />");
+
+		var ow= document.documentElement.offsetWidth || document.body.offsetWidth;
+		var oh= document.documentElement.offsetHeight || document.body.offsetHeight;
+		document.write("offsetHeight = clientHeight + 滚动条 + 边框。"+ow +" "+oh);
+	</script>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>替换元素节点replaceChild()、创建元素节点createElement、创建文本节点createTextNode</title>
+	<style type="text/css">
+
+		.message{    
+			width:200px;
+			height:100px;
+			background-color:#CCC;
+		}
+		
+	</style>
+</head>
+<body>
+	<div><b id="oldnode">JavaScript</b>是一个很常用的技术，为网页添加动态效果。</div>
+	<a href="javascript:replaceMessage()"> 将加粗改为斜体</a>
+	<hr>
+	  
+	<script type="text/javascript">
+	    function replaceMessage(){
+	        var oldnode=document.getElementById("oldnode");
+			var oldtextnode=oldnode.innerHTML;
+			var newnode=document.createElement("i");
+			newnode.innerHTML=oldtextnode;
+			oldnode.parentNode.replaceChild(newnode,oldnode);
+	    }    
+
+	    var main = document.body;
+	    //创建链接
+	    function createa(url,text){
+	        var a=document.createElement("a");
+	        a.innerHTML=text;
+	        a.href=url;
+	        a.style.color="red";
+	        main.appendChild(a);
+	    }
+	    // 调用函数创建链接
+	    createa("http://www.gongwenjun.com","blog");
+
+	    var p=document.createElement("p");
+	    p.className="message";
+	    var textnode=document.createTextNode("I love JavaScript!");
+	    p.appendChild(textnode);
+	    document.body.appendChild(p);
+	</script>
+</body>
+</html>
