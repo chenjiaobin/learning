@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>事件对象event</title>
+</head>
+<body>
+	<div id="box">
+		<input type="button" value="按钮" id="btn" />
+		<a href="http://www.gongwenjun.com" id="go">链接</a>
+	</div>
+	<script>
+		function showMes(e) {
+			e=eventUtil.getEvent(e);
+			alert(eventUtil.getType(e));//事件类型
+			alert(eventUtil.getElement(e));//事件目标
+			eventUtil.stopPropagation(e);//阻止事件冒泡
+		}
+
+		function showBox(){
+			alert("这是放按钮的盒子");
+
+		}
+		function stopGoto(e){
+			e=eventUtil.getEvent(e);
+			alert(eventUtil.getElement(e));
+			eventUtil.stopPropagation(e);
+			eventUtil.preventDefault(e);//阻止默认行为
+		}
+		var eventUtil={
+			//添加句柄
+			addHandler:function(element,type,handler){
+               if(element.addEventListener){
+                 element.addEventListener(type,handler,false);
+               }else if(element.attachEvent){
+                 element.attachEvent('on'+type,handler);
+               }else{
+                 element['on'+type]=handler;
+               }
+         	},
+         	// 删除句柄
+         	removeHandler:function(element,type,handler){
+               if(element.removeEventListener){
+                 element.removeEventListener(type,handler,false);
+               }else if(element.detachEvent){
+                 element.detachEvent('on'+type,handler);
+               }else{
+                 element['on'+type]=null;
+               }
+         	},
+         	getEvent:function(event){
+         		return event?event:window.event;
+         	},
+         	getType:function(event){
+         		return event.type;
+         	},
+         	getElement:function (event) {
+         		return event.target||event.srcElement;
+         	},
+         	preventDefault:function(event){
+         		if(event.preventDefault){
+         			event.preventDefault();
+         		}else{
+         			event.returnValue=false;
+         		}
+         	},
+         	stopPropagation:function(event){
+         		if(event.stopPropagation){
+         			event.stopPropagation();
+         		}else{
+         			event.cancelBubble=ture;
+         		}
+         	},
+		}
+		window.onload=function () {
+			var btn=document.getElementById('btn');
+			var box=document.getElementById('box');
+			var go=document.getElementById('go');
+			eventUtil.addHandler(btn,'click',showMes);
+			eventUtil.addHandler(box,'click',showBox);
+			eventUtil.addHandler(go,'click',stopGoto);
+		}
+		
+
+
+	</script>
+</body>
+</html>

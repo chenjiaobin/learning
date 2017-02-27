@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ面板拖拽效果</title>
+	<link rel="stylesheet" href="task3.css">
+</head>
+<body>
+	<div id="loginPanel">
+		<div class="login-logo-webqq">登陆</div>
+		<div class="ui-boxyClose">关闭</div>
+	
+		<form action="">
+			<label for="username">账 号：</label><input type="username" id="username" />
+			<label for="password">密 码：</label><input type="password" id="password" />
+			<div id="loginState" class="login-state-trigger login-state-trigger2 login-state" title="选择在线状态">
+            	<div id="loginStateShow" class="login-state-show online">状态</div>
+                <span class="login-state-down">:</span>
+                <div class="login-state-txt" id="login2qq_state_txt">在线</div>
+
+				<ul>
+					<li id="online" class="statePanel_li">
+					            <div class="stateSelect_icon online"></div>
+					            <div class="stateSelect_text">我在线上</div>
+					        </li>
+					        <li id="callme" class="statePanel_li">
+					            <div class="stateSelect_icon callme"></div>
+					            <div class="stateSelect_text">Q我吧</div>
+					        </li>
+					        <li id="away" class="statePanel_li">
+					            <div class="stateSelect_icon away"></div>
+					            <div class="stateSelect_text">离开</div>
+					        </li>
+					        <li id="busy" class="statePanel_li">
+					            <div class="stateSelect_icon busy"></div>
+					            <div class="stateSelect_text">忙碌</div>
+					        </li>
+					        <li id="silent" class="statePanel_li">
+					            <div class="stateSelect_icon silent"></div>
+					            <div class="stateSelect_text">请勿打扰</div>
+					        </li>
+					        <li id="hidden" class="statePanel_li">
+					            <div class="stateSelect_icon hidden"></div>
+					            <div class="stateSelect_text">隐身</div>
+					        </li>
+
+				</ul>
+			</div>
+			<input type="submit" value="登陆" />
+		</form>
+		
+	</div>
+</body>
+</html>
