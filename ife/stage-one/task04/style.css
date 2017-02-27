@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+.main {
+	/*垂直居中*/
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	width: 400px;
+	height: 200px;
+	background-color: #ccc;
+	overflow: hidden;
+}
+
+.circle-one, .circle-two {
+	width: 100px;
+	height: 100px;
+	background-color: #fc0;
+	border-radius: 50px;
+}
+
+/*absolute定位*/
+.circle-one{
+	position: absolute;
+	top:-50px;
+	left: -50px;
+}
+
+.circle-two{
+	position: absolute;
+	bottom: -50px;
+	right: -50px;
+}
