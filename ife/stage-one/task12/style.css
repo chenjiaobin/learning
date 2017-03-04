@@ -1,0 +1,158 @@
+/*css-reset*/
+html,body,div,ul,li,label,input,table {
+	margin: 0;
+	padding: 0;
+}
+
+ul {
+	list-style: none;
+}
+
+/*table*/
+table {
+	margin: 20px auto;
+}
+
+table thead {
+	text-align: left;
+	color: #fff;
+	background-color: #000;
+}
+
+table tbody tr:nth-child(even){
+	background-color: #ccc;
+}
+
+table tbody tr:nth-of-type(1),
+table tbody tr:nth-of-type(2),
+table tbody tr:nth-of-type(3) {
+	color: #f00;
+}
+
+input {
+	display: block;
+	margin: 0 auto;
+	width: 100px;
+	transform: width 1s;
+	transition:width 2s;
+}
+
+input:focus {
+	width: 200px;
+}
+
+
+
+/*wrap*/
+.wrap {
+	position: relative;
+	width: 300px;
+	height: 120px;
+	margin: 50px auto;
+	overflow: hidden;
+}
+
+#slider {
+	width: 300%;
+	height: 100%;
+	margin-left: 0px;
+	background-color: #eee;
+	-webkit-animation: slide1 10s ease infinite;
+}
+
+#slider li {
+	float: left;
+	width: 300px;
+	height: 100%;
+}
+
+#slider li:nth-child(1) {
+	background-color: #f00;
+}
+
+#slider li:nth-child(2) {
+	background-color: #0f0;
+}
+
+#slider li:nth-child(3) {
+	background-color: #00f;
+}
+
+@-webkit-keyframes slide1 {
+  0% { margin-left: 0; }
+  23% { margin-left: 0; }
+  33% { margin-left: -300px; }
+  56% { margin-left: -300px; }
+  66% { margin-left: -600px; }
+  90% { margin-left: -600px; }
+  100% {margin-left: 0; }
+}
+
+@-webkit-keyframes slide2 {
+  0% { margin-left: -300px; }
+  23% { margin-left: -300px; } 
+  33% { margin-left: -600px; }
+  56% { margin-left: -600px; }
+  66% { margin-left: 0; }
+  90% { margin-left: 0; }
+  100% {margin-left: -300px; }
+}
+
+@-webkit-keyframes slide3 {
+  0% { margin-left: -600px; }
+  23% { margin-left: -600px; }
+  33% { margin-left: 0; }
+  56% { margin-left: 0; }
+  66% { margin-left: -300px; }
+  90% { margin-left: -300px; }
+  100% {margin-left: -600px; }
+}
+
+#slider-one:checked ~ .wrap #slider {
+	-webkit-animation-name: slide1;
+}
+
+#slider-two:checked ~ .wrap #slider {
+	-webkit-animation-name: slide2;
+}
+
+#slider-three:checked ~ .wrap #slider {
+	-webkit-animation-name: slide3;
+}
+
+#slider-one:active ~ .wrap #slider {
+	-webkit-animation-name: none;
+	margin-left: 0;
+}
+
+#slider-two:active ~ .wrap #slider {
+	-webkit-animation-name: none;
+	margin-left: -300px;
+}
+
+#slider-three:active ~ .wrap #slider {
+	-webkit-animation-name: none;
+	margin-left: -600px;
+}
+
+.opts {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	height: 30px;
+	line-height: 30px;
+	color: #fff;
+	text-align: center;
+}
+
+.opts label {
+	float: left;
+	width: 30px;
+	margin-left: 4px;
+	background-color: #555;
+	cursor: pointer;
+}
+
+.banner input {
+	display: none;
+}
